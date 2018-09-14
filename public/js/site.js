@@ -172,7 +172,7 @@ $(function() {
 		// 	}
         // });
         
-        sendImage(bestCaptureUrl.replace('data:image/png;base64,', ''));
+        sendImage(bestCaptureUrl.replace('data:image/png;base64,', ""));
 
 		bestCapture = undefined;
 	}
