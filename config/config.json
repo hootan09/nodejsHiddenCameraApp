@@ -1,0 +1,10 @@
+{
+    "secret": "niki",
+    "user": [{
+        "id": 123456,
+        "mobile": 123456,
+        "password": 123456,
+        "email": "admin@admin.com",
+        "name": "admin"
+    }]
+}

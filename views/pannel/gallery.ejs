@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/pannelHead {user: user , page: page}%>
+</head>
+
+<body>
+    <div class="wrapper">
+        <% include ../partials/pannelSide {user: user , page: page}%>
+            <div class="main-panel">
+                <!-- Navbar -->
+                <% include ../partials/pannelTopNavbar {user: user , page: page}%>
+                    <!-- End Navbar -->
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">gallery Profile</h4>
+                                        </div>
+                                        <div class="card-body">
+
+
+                                            <div class="img-wrap">
+                                                <span class="close">&times;</span>
+                                                <img class="gallery" src="http://localhost:4000/upload/1.jpg" data-id="123">
+                                                <label class="galleryLabel">Username</label>
+                                            </div>
+
+                                            <div class="img-wrap">
+                                                <span class="close">&times;</span>
+                                                <img class="gallery" src="http://localhost:4000/upload/2.jpg" data-id="103">
+                                            </div>
+
+                                            <div class="img-wrap">
+                                                <span class="close">&times;</span>
+                                                <img class="gallery" src="http://localhost:4000/upload/3.jpg" data-id="103">
+                                            </div>
+
+                                            <div class="img-wrap">
+                                                <span class="close">&times;</span>
+                                                <img class="gallery" src="http://localhost:4000/upload/4.jpg" data-id="103">
+                                            </div>
+
+                                            <div class="img-wrap">
+                                                <span class="close">&times;</span>
+                                                <img class="gallery" src="http://localhost:4000/upload/5.jpg" data-id="103">
+                                            </div>
+
+                                            <div class="img-wrap">
+                                                <span class="close">&times;</span>
+                                                <img class="gallery" src="http://localhost:4000/upload/6.jpg" data-id="103">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% include ../partials/pannelFooter {user: user , page: page}%>
+            </div>
+    </div>
+
+</body>
+<% include ../partials/pannelCore {user: user , page: page}%>
+
+</html>

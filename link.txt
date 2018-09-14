@@ -1,0 +1,12 @@
+https://github.com/stetsmando/pi-motion-detection#readme
+https://github.com/stetsmando/pi-motion-detection/blob/master/index.js
+https://www.npmjs.com/package/motion-detect
+https://github.com/wesbos/HTML5-Security-Camera
+https://github.com/fingerpich/jalali-moment#using-in-nodejs
+
+
+http://diffcam.com/
+
+http://browserify.org/
+
+https://codersblock.com/blog/motion-detection-with-javascript/
