@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  font: 14px 'Open Sans', sans-serif;
+}
+a {
+  color: #090;
+}
+header, section, .tweaks {
+  max-width: 532px;
+}
+header::after, section::after, .tweaks::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+header {
+  padding-bottom: 20px;
+  border-bottom: 2px dotted #ccc;
+}
+h1 {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+.twitter-button {
+  display: inline-block;
+  margin-top: 15px;
+}
+.profile-image {
+  display: inline-block;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  vertical-align: -0.5rem;
+}
+section:not(:first-child) {
+  margin-top: 20px;
+}
+.toggle {
+  float: left;
+  width: 64px;
+  height: 64px;
+  margin-left: -5px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+}
+.toggle::before {
+  content: '\f056';
+  display: block;
+  color: #999;
+  font: 3.75rem/1 'FontAwesome';
+}
+.toggle.start::before {
+  content: '\f144';
+  color: #090;
+  cursor: pointer;
+}
+.toggle.stop::before {
+  content: '\f28d';
+  color: #900;
+  cursor: pointer;
+}
+.tweaks {
+  margin-left: 64px;
+}
+label {
+  float: left;
+  margin-left: 15px;
+}
+label input {
+  display: block;
+  width: 130px;
+  margin: 5px 0 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: right;
+  font-size: 1.25rem;
+}
+.submit-tweaks {
+  position: absolute;
+  left: -9999px;
+}
+.status {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.progress {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ccc;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+.meter {
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  animation-timing-function: linear;
+}
+.meter.considering {
+  transform: scaleX(1);
+  background-color: #090;
+  animation-name: fill-meter;
+}
+.meter.chilling {
+  transform: scaleX(0);
+  background-color: #009;
+  animation-name: empty-meter;
+}
+.feedback figure {
+  float: left;
+  margin: 0 0 10px 0;
+}
+.feedback .video, .feedback .motion {
+  width: 256px;
+  height: 192px;
+  background-color: #000;
+}
+.feedback .video {
+  margin-right: 20px;
+}
+.feedback .motion {
+  image-rendering: pixelated;
+}
+.feedback figcaption {
+  padding-top: 5px;
+  font-weight: bold;
+}
+.feedback .motion-score {
+  float: right;
+}
+.history figure {
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  background-color: #eee;
+}
+.history figure:first-child {
+  animation: entrance 1s ease-out;
+}
+.history figure:not(:last-child) {
+  margin-right: 10px;
+}
+.history img {
+  width: 160px;
+  height: 120px;
+}
+.history figcaption {
+  padding-top: 5px;
+}
+.history .score {
+  float: right;
+}
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+}
+@keyframes fill-meter {
+  0% {
+    transform: scaleX(0);
+  }
+}
+@keyframes empty-meter {
+  0% {
+    transform: scaleX(1);
+  }
+}

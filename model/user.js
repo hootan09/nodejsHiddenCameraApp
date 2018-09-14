@@ -4,11 +4,11 @@ module.exports.getUserById = (id, callback) => {
 
     callback(null,config.user);
 }
-// Get User by mobile
-module.exports.getUserByMobile = (mobile, callback) => {
+// Get User by username
+module.exports.getUserByusername = (username, callback) => {
     console.log(config.user);
     
-    if(mobile != config.user[0].mobile){
+    if(username != config.user[0].username){
         callback(null, {});
         return;
     }

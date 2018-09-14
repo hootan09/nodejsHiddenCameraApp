@@ -13,7 +13,7 @@ window.sendImage = function (file) {
         path: '/upload/',
         method: 'PUT',
         headers: {
-            filename: 'pic.jpg',
+            filename: 'pic.png',
             'Content-Type': 'application/octet-stream',
             'Content-Encoding': 'gzip'
         }

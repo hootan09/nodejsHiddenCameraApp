@@ -7,8 +7,8 @@ var User = require('../model/user');
 const app = module.exports = express.Router();
 
 passport.use(new LocalStrategy(
-	function (mobile, password, done) {
-		User.getUserByMobile(mobile, function (err, user) {
+	function (username, password, done) {
+		User.getUserByusername(username, function (err, user) {
 			console.log('user: ', user);
 			if (err) console.log('error user not found: ', err);
 			//if(err) throw err;
@@ -67,6 +67,11 @@ app.get('/', function (req, res) {
 		tagline: tagline
 	});
 });
+
+//home page for capture images and send to server
+app.get('/home', (req,res) => {
+	res.render('pages/home');
+})
 
 //login page
 app.get('/login', (req, res) => {

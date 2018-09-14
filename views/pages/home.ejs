@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Web app that uses motion detection to take a snapshot when something moves, then uploads the image to Twitter.">
+
+		<title>Diff Cam Feed</title>
+
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/css/site.css">
+	</head>
+	<body>
+			<header>
+
+			</header>
+			<section>
+				<button class="toggle" disabled></button>
+				<form class="tweaks">
+					<label>
+						Pixel Diff Threshold
+						<input id="pixel-diff-threshold" type="number" min="0" max="255" disabled>
+					</label>
+					<label>
+						Score Threshold
+						<input id="score-threshold" type="number" min="0" disabled>
+					</label>
+
+					<input type="submit" tab-index="-1" class="submit-tweaks" disabled>
+				</form>
+			</section>
+
+			<section>
+				<div class="status"></div>
+				<div class="progress">
+					<div class="meter"></div>
+				</div>
+			</section>
+
+			<section class="feedback">
+				<figure>
+					<video class="video"></video>
+					<figcaption>Live Stream</figcaption>
+				</figure>
+				<figure>
+					<canvas class="motion"></canvas>
+					<figcaption>
+						Motion Heatmap
+						<span class="motion-score"></span>
+					</figcaption>
+				</figure>
+			</section>
+
+			<section class="history">
+            </section>
+            
+			<script src="/js/jquery.min.js"></script>
+			<script src="js/diff-cam-engine.js"></script>
+
+            
+            <script src="js/bundle.js"></script>
+            <!-- <script src="js/main.js"></script> -->
+            
+			<script src="js/site.js"></script>
+
+			<template id="history-item-template">
+				<figure>
+					<img>
+					<figcaption>
+						<span class="time"></span>
+						<span class="score"></span>
+					</figcaption>
+				</figure>
+			</template>
+	</body>
+</html>
