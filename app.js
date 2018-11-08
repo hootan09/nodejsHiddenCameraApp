@@ -18,6 +18,7 @@ passport = require('passport');
 LocalStrategy = require('passport-local').Strategy;
 utils = require('./utils/utils');
 
+
 app.put('/upload', (req, res) => {
     if (req.headers['content-encoding'] === 'gzip') {
 
@@ -31,17 +32,19 @@ app.put('/upload', (req, res) => {
                     return
                 }
                 if (success) {
+                    
+                    let image;
                     req.pipe(crypto.createDecipher('aes192', config.secret))
-                        .pipe(zlib.createGunzip())
-                        .pipe( fs.createWriteStream('public/upload/' + filename))
-                        .on('finish', () => {
+                    .pipe(zlib.createGunzip())
+                    .pipe( fs.createWriteStream('public/upload/' + filename, {encoding: 'base64'}))
+                    .on('finish', () => {
+
                             res.writeHead(200, { 'Content-Type': 'text/plain' });
                             res.end('That\'s it\n');
                             console.log(`File saved: ${filename}`);
-                        });
-                }
-            })
-
+                    });
+            }
+        })
     }
     else {res.status(400).send('this is not a gzip headers request');}
 })

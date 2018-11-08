@@ -6,14 +6,14 @@ const http = require('http');
 const crypto = require('crypto');
 const stream = require('stream');
 
-window.sendImage = function (file) {
+window.sendImage = function (file , fileName = "pic.png") {
     const options = {
         hostname: 'localhost',
         port: 3000,
         path: '/upload/',
         method: 'PUT',
         headers: {
-            filename: 'pic.png',
+            filename: fileName,
             'Content-Type': 'application/octet-stream',
             'Content-Encoding': 'gzip'
         }

@@ -144,7 +144,7 @@ $(function() {
 		// prep values
 		var bestCaptureUrl = bestCapture.getURL();
 		var src = bestCaptureUrl;
-		var time = new Date().toLocaleTimeString().toLowerCase();
+		var time = new Date().toLocaleTimeString().toLowerCase().replace(/:/g,"_");
 		var score = bestCapture.score;
 
 		// load html from template
@@ -171,10 +171,9 @@ $(function() {
 		// 		dataURL: bestCaptureUrl.replace('data:image/png;base64,', '')
 		// 	}
         // });
-        
-        sendImage(bestCaptureUrl.replace('data:image/png;base64,', ""));
+        sendImage(bestCaptureUrl.replace('data:image/png;base64,', "") , time+".png");
 
-		bestCapture = undefined;
+		// bestCapture = undefined;
 	}
 
 	// kick things off
