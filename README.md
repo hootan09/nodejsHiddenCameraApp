@@ -6,14 +6,15 @@ Working on my free time :)
 in front we user nodejs to send data to server
 we need Browserify to bundle main.js file
 
-'''
+```sh
+
 $ npm i -g browserify
 
 $ cd public/js/
 
 $ browserify main.js -o bundle.js
 
-'''
+```
 
 ## Preview/Screenshot
 
