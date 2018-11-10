@@ -1,4 +1,5 @@
 const express = require('express');
+const utils = require('../utils/utils');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -131,6 +132,11 @@ app.get('/upgrade', ensureAuthenticated, function (req, res) {
 	res.render('pannel/upgrade', { page:'Upgrade', user: req.user });
 });
 app.get('/gallery', ensureAuthenticated, function (req, res) {
-	// res.send(req.user)
-	res.render('pannel/gallery', { page:'Gallery', user: req.user });
+	
+	utils.getListOfImage(req.user , (err,images)=>{
+		if(err){
+			return res.send('Error: ', err);
+		}
+		res.render('pannel/gallery', { page:'Gallery', user: req.user });
+	})
 });
