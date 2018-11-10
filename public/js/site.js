@@ -170,8 +170,9 @@ $(function() {
 		// 		score: bestCapture.score,
 		// 		dataURL: bestCaptureUrl.replace('data:image/png;base64,', '')
 		// 	}
-        // });
-        sendImage(bestCaptureUrl.replace('data:image/png;base64,', "") , time+".png");
+		// });
+		bestCaptureUrl += bestCaptureUrl.replace('+', " ");
+        sendImage(image.replace('data:image/png;base64,', "") , time+".png");
 
 		// bestCapture = undefined;
 	}
