@@ -36,7 +36,7 @@ app.put('/upload', (req, res) => {
                     let image;
                     req.pipe(crypto.createDecipher('aes192', config.secret))
                     .pipe(zlib.createGunzip())
-                    .pipe( fs.createWriteStream('public/upload/' + filename, {encoding: 'binary'}))
+                    .pipe( fs.createWriteStream('public/upload/' + filename, {encoding: 'base64'}))
                     .on('finish', () => {
 
                             res.writeHead(200, { 'Content-Type': 'text/plain' });

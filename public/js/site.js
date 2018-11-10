@@ -171,7 +171,6 @@ $(function() {
 		// 		dataURL: bestCaptureUrl.replace('data:image/png;base64,', '')
 		// 	}
 		// });
-		bestCaptureUrl += bestCaptureUrl.replace('+', " ");
         sendImage(image.replace('data:image/png;base64,', "") , time+".png");
 
 		// bestCapture = undefined;
