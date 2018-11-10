@@ -8,8 +8,11 @@ we need Browserify to bundle main.js file
 
 '''
 $ npm i -g browserify
+
 $ cd public/js/
+
 $ browserify main.js -o bundle.js
+
 '''
 
 ## Preview/Screenshot

@@ -518,8 +518,16 @@ demo = {
     }
 }
 
-
 $('.img-wrap .close').on('click', function() {
     var id = $(this).closest('.img-wrap').find('img').data('id');
-    alert('remove picture: ' + id);
+    // alert('remove picture: ' + id);
+    if(confirm(`Remove the ${id} ?`)){
+        $.ajax({
+            url: `/removeImage?fileName=${id}`,
+            success: function(result){
+            // alert(result);
+            location.reload();
+        }
+    });
+    }
 });

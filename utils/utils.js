@@ -15,6 +15,7 @@
   }
 
   //todo must work on user path profile
+  //todo if directory and file exist
   function getListOfImage(user, cb){
     fs.readdir('./public/upload', function (err, files) {
       // "files" is an Array with files names
@@ -26,4 +27,18 @@
   });
   }
 
-  module.exports = {checkFileType, getListOfImage};
+  //todo must work on user path profile
+  //todo if directory and file exist
+  function removeImage(user, filename,cb){
+      if(filename){
+        fs.unlink(`./public/upload/${filename}`, function (err) {
+          if (err){
+            console.log('Error in utils removeImage');
+            return cb(err);
+          }
+         cb(null,'success');  
+      }); 
+    }
+  }
+
+  module.exports = {checkFileType, getListOfImage, removeImage};

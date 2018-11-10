@@ -22,39 +22,13 @@
                                         </div>
                                         <div class="card-body">
 
-
+                                            <%for(i=0;i < images.length; i++){%>
                                             <div class="img-wrap">
                                                 <span class="close">&times;</span>
-                                                <img class="gallery" src="/upload/1.jpg" data-id="123">
-                                                <label class="galleryLabel">Username</label>
+                                                <img class="gallery" src="/upload/<%= images[i] %>" data-id="<%=images[i]%>">
+                                                <label class="galleryLabel"><%= user[0].username %></label>
                                             </div>
-
-                                            <div class="img-wrap">
-                                                <span class="close">&times;</span>
-                                                <img class="gallery" src="/upload/2.jpg" data-id="103">
-                                            </div>
-
-                                            <div class="img-wrap">
-                                                <span class="close">&times;</span>
-                                                <img class="gallery" src="/upload/3.jpg" data-id="103">
-                                            </div>
-
-                                            <div class="img-wrap">
-                                                <span class="close">&times;</span>
-                                                <img class="gallery" src="/upload/4.jpg" data-id="103">
-                                            </div>
-
-                                            <div class="img-wrap">
-                                                <span class="close">&times;</span>
-                                                <img class="gallery" src="/upload/5.jpg" data-id="103">
-                                            </div>
-
-                                            <div class="img-wrap">
-                                                <span class="close">&times;</span>
-                                                <img class="gallery" src="/upload/6.jpg" data-id="103">
-                                            </div>
-
-
+                                            <%}%>
                                         </div>
                                     </div>
                                 </div>

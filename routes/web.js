@@ -137,6 +137,17 @@ app.get('/gallery', ensureAuthenticated, function (req, res) {
 		if(err){
 			return res.send('Error: ', err);
 		}
-		res.render('pannel/gallery', { page:'Gallery', user: req.user });
+		return res.render('pannel/gallery', { page:'Gallery', user: req.user, images });
 	})
 });
+
+app.get('/removeImage', ensureAuthenticated, (req,res)=>{
+	if(req.user && req.query.fileName){
+		utils.removeImage(req.user,req.query.fileName, (err, success)=>{
+			if(err){
+				return res.send('err: ', err);
+			}
+			return res.send(success);
+		})
+	}
+})
