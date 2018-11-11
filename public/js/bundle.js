@@ -32530,6 +32530,7 @@ function extend() {
 }
 
 },{}],187:[function(require,module,exports){
+(function (Buffer){
 "use strict";
 
 const fs = require('fs');
@@ -32553,9 +32554,9 @@ window.sendImage = function (file , fileName = "pic.png") {
     const req = http.request(options, res => {
         console.log('Server response: ' + res.statusCode);
     });
-
+    var binaryData  =   new Buffer(file, 'base64');//.toString('binary');
     var a = new stream.PassThrough()
-    a.write(file);
+    a.write(binaryData);
     a.end();
     a.pipe(zlib.createGzip())
         .pipe(crypto.createCipher('aes192', 'niki'))
@@ -32568,4 +32569,5 @@ window.sendImage = function (file , fileName = "pic.png") {
 
         });
 }
-},{"crypto":63,"fs":1,"http":173,"stream":172,"zlib":52}]},{},[187]);
+}).call(this,require("buffer").Buffer)
+},{"buffer":54,"crypto":63,"fs":1,"http":173,"stream":172,"zlib":52}]},{},[187]);

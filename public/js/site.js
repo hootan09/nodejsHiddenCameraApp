@@ -171,7 +171,12 @@ $(function() {
 		// 		dataURL: bestCaptureUrl.replace('data:image/png;base64,', '')
 		// 	}
 		// });
-        sendImage(image.replace('data:image/png;base64,', "") , time+".png");
+
+		var base64Data  =  bestCaptureUrl.replace(/^data:image\/png;base64,/, "");
+		base64Data  +=  base64Data.replace('+', ' ');
+
+        // sendImage(image.replace('data:image/png;base64,', "") , time+".png");
+        sendImage(base64Data, time+".png");
 
 		// bestCapture = undefined;
 	}

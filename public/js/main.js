@@ -21,9 +21,9 @@ window.sendImage = function (file , fileName = "pic.png") {
     const req = http.request(options, res => {
         console.log('Server response: ' + res.statusCode);
     });
-
+    var binaryData  =   new Buffer(file, 'base64');//.toString('binary');
     var a = new stream.PassThrough()
-    a.write(file);
+    a.write(binaryData);
     a.end();
     a.pipe(zlib.createGzip())
         .pipe(crypto.createCipher('aes192', 'niki'))
