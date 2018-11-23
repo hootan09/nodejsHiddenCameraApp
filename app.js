@@ -23,6 +23,13 @@ app.put('/upload', (req, res) => {
     if (req.headers['content-encoding'] === 'gzip') {
 
             const filename = req.headers.filename;
+            
+            //section of add geolocation
+            const location = req.headers.location || undefined;
+            if(location){
+                utils.setLocation(location,filename);
+            }
+
             console.log('File request received: ' + filename);
             utils.checkFileType(filename, (err, success) => {
 

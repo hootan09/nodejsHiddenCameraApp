@@ -41,4 +41,10 @@
     }
   }
 
-  module.exports = {checkFileType, getListOfImage, removeImage};
+  //todo working on add geolocation
+  function setLocation(location , fileName){
+    //todo must add layer to save imageName and location in file/db
+    
+  }
+
+  module.exports = {checkFileType, getListOfImage, removeImage, setLocation};

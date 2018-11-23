@@ -15,7 +15,6 @@ module.exports.getUserByusername = (username, callback) => {
     callback(null,config.user);
 }
 
-
 // compare password
 module.exports.comparePassword = (password, dbPassword, callback) => {
     if (password == dbPassword) {
