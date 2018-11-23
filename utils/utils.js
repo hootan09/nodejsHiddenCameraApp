@@ -44,6 +44,9 @@
   //todo working on add geolocation
   function setLocation(location , fileName){
     //todo must add layer to save imageName and location in file/db
+    if(!filename && !location){
+      return;
+    }
     
   }
 
